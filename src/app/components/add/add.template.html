@@ -1,4 +1,4 @@
-<form action="" method="post" class="add-task" name="addTask">
+<form action="#" class="add-task" name="addTask">
   <div class="button-add" ng-click="$ctrl.showFieldInput()">CREATE NEW TASK</div>
   <div class="field-input" ng-class="{'show': $ctrl.show}">
     <div class="input-cover">
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div>
-      <button type="button" class="button-for-add" ng-class="{'valid': addTask.$valid}" ng-click="$ctrl.addTask(addTask)">ADD</button>
+      <button type="button" class="button-for-add" ng-class="{'valid': addTask.$valid}" ng-click="$ctrl.addTask($event, addTask)">ADD</button>
     </div>
   </div>
 </form>

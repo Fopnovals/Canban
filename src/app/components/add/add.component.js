@@ -17,7 +17,7 @@
           _this.show = !_this.show;
         };
 
-        _this.addTask = function(data) {
+        _this.addTask = function(e, data) {
           if(!data.$valid) {
             return;
           } else {
@@ -26,6 +26,7 @@
               priority: data.radio.value
             };
             _this.show = false;
+            angular.element(e.target).closest('.add-task').find('.input-new-task').val('');
             _this.createTask({task:temp});
           }
         }
