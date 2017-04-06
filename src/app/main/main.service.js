@@ -15,6 +15,7 @@
     _this.doneTasks = $rootScope.doneTasks;
     _this.maxID = $rootScope.maxID;
 
+    //sorting of tasks
     var sortTasksPriority = function(tasks) {
       var hightPriority = [], normalPriority = [], lowPriority = [];
       for(var i=0; i<tasks.length; i++) {
@@ -35,6 +36,7 @@
       });
     };
 
+    //addition a new task
     _this.addTask = function(obj) {
       var currentTime = new Date(),
         id;
@@ -65,6 +67,7 @@
       return _this.tasks;
     };
 
+    //editing of task
     _this.editTask = function(id, newText, priority) {
       var i=0;
       while(i<_this.tasks.length) {
@@ -79,6 +82,7 @@
       }
     };
 
+    //saving tasks in localStorage
     _this.storage = function() {
       var doitTasks = angular.toJson(_this.tasks);
       localStorage.setItem('doitTasks', doitTasks);
@@ -99,6 +103,7 @@
       localStorage.setItem('doneTasks', doneTasks);
     };
 
+    //move tasks to aborted column
     _this.abortTask = function(obj) {
       var i=0;
       while(i<_this.tasks.length) {
@@ -113,6 +118,7 @@
       }
     };
 
+    //delete tasks from aborted column
     _this.removeTask = function(id) {
       var i=0;
       while(i<_this.abortedTasks.length) {
@@ -124,6 +130,7 @@
       }
     };
 
+    //move tasks to inProgress column
     _this.moveInProgress = function(id) {
       var i=0;
       while(i<_this.tasks.length) {
@@ -139,6 +146,7 @@
       }
     };
 
+    //edition priority tasks
     _this.editInProgress = function(obj) {
       var i=0;
       while(i<_this.inProgressTasks.length) {
@@ -152,6 +160,7 @@
       }
     };
 
+    //move tasks to aborted column from inProgress column
     _this.abortInProgress = function(obj) {
       var i=0;
       while(i<_this.inProgressTasks.length) {
@@ -166,7 +175,7 @@
         i++;
       }
     };
-
+    //move tasks from inProgress column to done column
     _this.moveToDone = function(obj) {
       var i=0;
       while(i<_this.inProgressTasks.length) {
@@ -182,6 +191,7 @@
       }
     };
 
+    //delete tasks from done column
     _this.removeDoneTask = function(id) {
       var i=0;
       while(i<_this.doneTasks.length) {
