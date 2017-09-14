@@ -8,6 +8,8 @@
 1. Клонировать репозиторий
 2. Выполнить команду npm install
 3. Выполнить команду bower install
+4. Выполнить команду npm install -g yo gulp bower
+5. Выполнить команду npm install -g generator-gulp-angular
 4. Для начала разработки выполнить команду gulp serve
 5. Для запуска сборки проекта выполнить gulp build
 
